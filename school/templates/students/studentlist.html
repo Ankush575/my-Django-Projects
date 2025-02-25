@@ -1,0 +1,21 @@
+<h2>Student List from my first django project</h2>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Roll Number</th>
+        <th>Actions</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.rollNumber }}</td>
+        <td>
+            <a href="{% url 'studentdetail' student.id %}" style="text-decoration: none;">View</a> |
+            <a href="{% url 'updatestudent' student.id %}" style="text-decoration: none;">Edit</a> |
+            <a href="#" style="text-decoration: none;">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<button style="border: 2px solid black;"><a href="{% url 'addstudent' %}" style="text-decoration: none;">Add
+        Student</a></button>
