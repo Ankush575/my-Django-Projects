@@ -43,3 +43,13 @@ def updateStudent(request, id):
     else:
         form = StudentForm(instance=student)
     return render(request, 'updatestudent.html', {'form': form})
+
+# function to delete a student
+
+
+def deleteStudent(request, id):
+    student = get_object_or_404(Student, id=id)
+    if request.method == 'POST':
+        student.delete()
+        return redirect('studentlist')
+    return render(request, 'deletestudent.html', {'student': student})

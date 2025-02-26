@@ -4,15 +4,14 @@ from django.db import models
 
 
 class Student(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(null=False, max_length=100)
     rollNumber = models.IntegerField(unique=True)
     email = models.EmailField(max_length=100, unique=True)
-    phone = models.IntegerField()
-    address = models.TextField(max_length=200)
-    age = models.IntegerField()
-    addmissionDate = models.DateField(max_length=100)
-    gender = models.CharField(max_length=10)
-    classIncharge = models.CharField(max_length=30)
+    phone = models.IntegerField(null=False)
+    address = models.TextField(null=False)
+    DOB = models.DateField(null=False)
+    gender = models.CharField(null=False, max_length=10)
+    admissionDate = models.DateField(null=False)
 
     def __str__(self):
         return f"{self.name},{self.rollNumber}"
