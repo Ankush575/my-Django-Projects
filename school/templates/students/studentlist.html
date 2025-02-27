@@ -1,21 +1,28 @@
-<h2>List of the Students</h2>
-<table border="1" style="text-align: center;">
-    <tr>
-        <th>Name</th>
-        <th>Roll Number</th>
-        <th>Actions</th>
-    </tr>
-    {% for student in students %}
-    <tr>
-        <td>{{ student.name }}</td>
-        <td>{{ student.rollNumber }}</td>
-        <td>
-            <a href="{% url 'studentdetail' student.id %}" style="text-decoration: none; ">View</a> |
-            <a href="{% url 'updatestudent' student.id %}" style="text-decoration: none; ">Update</a> |
-            <a href="{% url 'deletestudent' student.id %}" style="text-decoration: none; ">Delete</a>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
-<button style="border: 2px solid black;"><a href="{% url 'addstudent' %}" style="text-decoration: none;">Add
-        Student</a></button>
+<body>
+
+    <h2 style="text-align: center;">List of the Students</h2>
+    <div class="tableofstudents" style="display: flex; justify-content: center;">
+        <table border="1" style="text-align: center; background-color: beige;">
+            <tr>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Actions</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.rollNumber }}</td>
+                <td>
+                    <a href="{% url 'studentdetail' student.id %}" style="text-decoration: none; ">View</a> |
+                    <a href="{% url 'updatestudent' student.id %}" style="text-decoration: none; ">Update</a> |
+                    <a href="{% url 'deletestudent' student.id %}" style="text-decoration: none; ">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="btn " style="display: flex; justify-content: center;">
+        <button style="border: 1px solid black;"><a href="{% url 'addstudent' %}" style="text-decoration: none;">Add
+                Student</a></button>
+    </div>
+</body>

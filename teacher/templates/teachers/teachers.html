@@ -1,0 +1,21 @@
+<h2>List of the Teachers</h2>
+<table border="1" style="text-align: center;">
+    <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Actions</th>
+    </tr>
+    {% for teacher in teachers %}
+    <tr>
+        <td>{{ teacher.name }}</td>
+        <td>{{ teacher.department }}</td>
+        <td>
+            <a href="{% url 'teacherDetail' teacher.id %}" style="text-decoration: none; ">View</a> |
+            <a href="#" style="text-decoration: none; ">Update</a> |
+            <a href="#" style="text-decoration: none; ">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<button style="border: 2px solid black;"><a href="{% url 'addteacher' %}" style="text-decoration: none;">Add
+        Teacher</a></button>

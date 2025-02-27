@@ -1,0 +1,17 @@
+<h2>{{ teacher.name }}'s Details</h2>
+<div class="teacher-details">
+    <table border="1" style="text-align: center;">
+        <tr>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>{{ teacher.email }}</td>
+            <td>{{ teacher.phone }}</td>
+            <td>{{ teacher.department }}</td>
+
+        </tr>
+    </table>
+    <button><a href="{% url 'teacherlist' %}" style="text-decoration: none;">Back to Teacher's List</a></button>
+</div>

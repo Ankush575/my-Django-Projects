@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_list_or_404, redirect
 from .models import Teacher
-from forms import TeacherForm
+from .forms import TeacherForm
 
 # Create your views here.
 # function to get all teachers
