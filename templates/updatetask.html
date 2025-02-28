@@ -1,0 +1,52 @@
+<h1 style="text-align: center;">Update Task</h1>
+<form
+  method="post"
+  style="
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0.9, 0, 0, 0.9);
+    border: solid 2px darkgrey;
+  "
+>
+  {% csrf_token %}
+
+  <div style="margin-bottom: 15px;">{{ form.as_p }}</div>
+  <div class="button" style="display: flex; justify-content: space-evenly;">
+
+  <button
+    type="submit"
+    style="
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    "
+  >
+    Update Task
+  </button>
+
+  <button
+    style="
+      margin-left: 10px;
+      border: 2px solid black;
+      padding: 8px 15px;
+      background: none;
+      cursor: pointer;
+      border-radius: 5px;
+    "
+  >
+    <a
+      href="{% url 'tasklist' %}"
+      style="text-decoration: none; color: black; font-size: 16px"
+    >
+      Back to Tasks
+    </a>
+  </button>
+  </div>
+</form>

@@ -3,6 +3,6 @@ from .models import Task
 
 
 class TaskForm(forms.ModelForm):
-    class meta:
+    class Meta:
         model = Task
         fields = '__all__'

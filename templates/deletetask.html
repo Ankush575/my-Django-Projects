@@ -1,0 +1,64 @@
+<head>
+  <title>Delete Task</title>
+</head>
+
+<body
+  style="
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 50px;
+  "
+>
+  <div
+    style="
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0.3, 0, 0, 0.8);
+    "
+  >
+    <h2 style="color: #dc3545">
+      Are you sure you want to delete "{{ task.taskTitle }}"?
+    </h2>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <button
+        type="submit"
+        style="
+          background-color: #dc3545;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        "
+      >
+        Delete
+      </button>
+
+      <button
+        style="
+          margin-left: 10px;
+          border: 2px solid black;
+          padding: 8px 15px;
+          background: none;
+          cursor: pointer;
+          border-radius: 5px;
+        "
+      >
+        <a
+          href="{% url 'tasklist' %}"
+          style="text-decoration: none; color: black; font-size: 16px"
+        >
+          Cancel
+        </a>
+      </button>
+    </form>
+  </div>
+</body>

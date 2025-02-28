@@ -1,0 +1,48 @@
+<form
+  method="post"
+  style="
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  "
+>
+  {% csrf_token %}
+
+  <div style="margin-bottom: 15px">{{ form.as_p }}</div>
+
+  <button
+    type="submit"
+    style="
+      background-color: #28a745;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    "
+  >
+    Add Task
+  </button>
+
+  <button
+    style="
+      margin-left: 10px;
+      border: 2px solid black;
+      padding: 8px 15px;
+      background: none;
+      cursor: pointer;
+      border-radius: 5px;
+    "
+  >
+    <a
+      href="{% url 'tasklist' %}"
+      style="text-decoration: none; color: black; font-size: 16px"
+    >
+      Back to Task List
+    </a>
+  </button>
+</form>

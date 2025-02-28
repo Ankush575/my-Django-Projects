@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Details</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #007bff;
+      padding: 50px;
+    "
+  >
+    <div
+      style="
+        max-width: 1000px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0.1, 0.5, 0.8, 0.8);
+      "
+    >
+      
+      <marquee direction="left"><h2 style="color: black">{{ task.taskTitle }}'s Details</h2></marquee>
+
+      <table
+        border="1"
+        style="
+          width: 100%;
+          border-collapse: collapse;
+          text-align: center;
+          background-color: #fff;
+          border-color: black;
+        "
+      >
+        <tr style="background-color: #007bff; color: white">
+          <th style="padding: 10px">Title</th>
+          <th>Description</th>
+          <th>Start Date</th>
+          <th>Due Date</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td style="padding: 10px">{{ task.taskTitle }}</td>
+          <td>{{ task.taskDescription }}</td>
+          <td>{{ task.taskStartDate }}</td>
+          <td>{{ task.taskDueDate }}</td>
+          <td>{{ task.taskStatus }}</td>
+        </tr>
+      </table>
+
+      <div style="margin-top: 20px">
+        <button class="backtotask"
+          style="
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+          "
+        >
+          <a
+            href="{% url 'tasklist' %}"
+            style="text-decoration: none; color: white"
+            >Back to Tasks</a
+          >
+        </button>
+
+        <button
+          style="
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+          "
+        >
+          <a
+            href="{% url 'updatemytask' task.id %}"
+            style="text-decoration: none; color: white"
+            >Update</a
+          >
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
